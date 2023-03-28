@@ -15,12 +15,12 @@ function Home() {
         title: "Toyota Geep",
       },
       {
-        url: "https://images.unsplash.com/photo-1592857723369-03e2e792626d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8bGV4dXN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60",
+        url: "https://images.squarespace-cdn.com/content/v1/5aac1f6a5cfd796d520a4a7a/1573027028104-4NF7EULN922NKDMEF7KP/Banner+4.jpg?format=1500w",
         title: "Lexus",
       },
       {
-        url: "https://images.unsplash.com/photo-1541410374363-986ee54b03f7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjV8fG5pc3NhbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-        title: "Nissan"
+        url: "https://images.squarespace-cdn.com/content/v1/5aac1f6a5cfd796d520a4a7a/1573034609278-5LFRPM2KH97CZ6340FGA/Mascardi+%2840+of+66%29.jpg?format=1500w",
+        title: "Nissan",
       },
     ];
 
