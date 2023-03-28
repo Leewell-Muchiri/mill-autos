@@ -4,7 +4,13 @@ function Navbar() {
   return (
     <div>
       <nav className="top-padding">
-        <logo>MILL AUTOS</logo>
+        <logo
+          style={{
+            color: "red",
+          }}
+        >
+          MILL AUTOS
+        </logo>
         {/* Login && signup link */}
         <div>
           <Link className="right-padding">About</Link>

@@ -1,5 +1,11 @@
 function Home() {
-    return (  <p>This is the home dir</p>);
+    return (
+        <div>
+            <div className="slideshow">
+                <p>Image should be here</p>
+            </div>
+        </div>
+    );
 }
 
 export default Home;
