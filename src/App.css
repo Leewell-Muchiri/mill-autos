@@ -8,6 +8,13 @@
   --nav-hover-color: red;
 }
 
+.center{
+  display: 'flex';
+  flex-direction: 'column';
+  justify-content: center;
+  align-items: center;
+}
+
 button {
   outline: none;
 }
@@ -35,6 +42,14 @@ nav {
   /* position: fixed; */
   top: 0;
   width: 100%;
+}
+
+/* stock */
+.stock{
+
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  margin: 0 5em;
 }
 
 

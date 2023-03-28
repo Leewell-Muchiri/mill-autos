@@ -13,6 +13,7 @@ function Navbar() {
         </logo>
         {/* Login && signup link */}
         <div>
+          <Link className="right-padding">Our Stock</Link>
           <Link className="right-padding">About</Link>
           <Link>Contacts</Link>
         </div>
