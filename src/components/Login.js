@@ -66,6 +66,10 @@ function Login() {
           <p className="forgot-password text-right">
             Haven't Registered? <Link to="/register">Sign up here</Link>
           </p>
+          <p className="forgot-password text-right">
+            Forgot password? Click <Link to="/reset">Here</Link> to reset
+          </p>
+          
         </center>
       </form>
     </div>

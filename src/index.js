@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import Signup from "./components/Signup";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./components/Login";
+import PasswordReset from "./components/PasswordReset";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -15,6 +16,7 @@ root.render(
         <Route path="/" exact="true" element={<App />} />
         <Route path="/register" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/reset" element={<PasswordReset />} />
         {/* <Route path="/create" element={<CreateCar />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} /> */}
