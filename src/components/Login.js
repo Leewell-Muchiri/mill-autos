@@ -24,6 +24,16 @@ function Login() {
 
   return (
     <div className="signUpContainer">
+
+      <Link
+      style={{
+        position: 'absolute',
+        top: '15px',
+        left: '15px',
+        color: "green",
+        textDecoration: 'none',
+      }}
+      to='/'>Return To Home</Link>
       <h1 className="text-center mb-4">Login</h1>
 
       <form onSubmit={handleSubmit}>
