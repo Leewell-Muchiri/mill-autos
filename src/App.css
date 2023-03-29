@@ -1,38 +1,66 @@
+/* Global styles */
 .App {
-  text-align: center;
+  height: 100%;
+}
+:root {
+  --default-background: #000;
+  --shadow: rgba(0, 0, 0, 0.2);
+  --nav-hover-color: red;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.center {
+  display: "flex";
+  flex-direction: "column";
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+button {
+  outline: none;
+}
+a {
+  text-decoration: none;
+  color: var(--default-background);
+}
+a:hover {
+  color: var(--nav-hover-color);
+}
+.right-padding {
+  padding-right: 20px;
+}
+.top-padding {
+  padding-top: 20px;
+}
+
+/* Nav */
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  box-shadow: 0 2px 4px 0 var(--shadow);
+  padding-bottom: 20px;
+  top: 0;
+  width: 100%;
+}
+
+/* stock */
+.stock {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  margin: 0 5em;
+}
+
+/* Grid styles */
+.grid-style {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  background-color: rgb(39, 39, 39);
   color: white;
+  justify-content: space-evenly;
+  align-items: first baseline;
+  margin: 2rem 0 0 0;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.grid-custom{
+  padding-left: -20rem;
+  /* margin: 1rem 0 0 0; */
 }
