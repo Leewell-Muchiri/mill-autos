@@ -20,7 +20,7 @@ function Navbar() {
         {/* Login && signup link */}
         <div>
           <Link className="right-padding">Login</Link>
-          <Link>Signup</Link>
+          <Link to='/register'>Signup</Link>
         </div>
       </nav>
     </div>
