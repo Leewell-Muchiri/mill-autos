@@ -1,9 +1,29 @@
 /* Global styles */
+.App {
+  height: 100%;
+}
+:root {
+  --default-background: #000;
+  --shadow: rgba(0, 0, 0, 0.2);
+  --nav-hover-color: red;
+}
+
+.center{
+  display: 'flex';
+  flex-direction: 'column';
+  justify-content: center;
+  align-items: center;
+}
+
 button {
   outline: none;
 }
 a {
   text-decoration: none;
+  color: var(--default-background);
+}
+a:hover {
+  color: var(--nav-hover-color);
 }
 .right-padding {
   padding-right: 20px;
@@ -17,4 +37,40 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  box-shadow: 0 2px 4px 0 var(--shadow);
+  padding-bottom: 20px;
+  /* position: fixed; */
+  top: 0;
+  width: 100%;
 }
+
+/* stock */
+.stock{
+
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  margin: 0 5em;
+}
+
+
+/* slideshow */
+/* .slideshow{
+  background: var(--default-background);
+  margin-top: 10px;
+  padding: 10rem 0;
+} */
+
+/* Footer */
+/* .footer{ */
+  /* padding-top: 30px; */
+  /* position: absolute;
+  float: bottom;
+  bottom: 0; */
+  /* width: 100%;
+  background-color: black;
+  color: white; */
+/* } */
+/* .footer-first {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+} */
