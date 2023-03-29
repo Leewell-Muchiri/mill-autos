@@ -24,7 +24,6 @@ function Signup({ setIsLoggedIn }) {
     nav("/todo");
   }
 
-  // change
 // added form to enable user to enter their credials and sign up
   return (
     <div className="container">
