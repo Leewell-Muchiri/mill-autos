@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import Signup from "./components/Signup";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -11,8 +12,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" exact="true" element={<App />} />
-        {/* <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Home />} />
+        <Route path="/register" element={<Signup />} />
+        {/* <Route path="/login" element={<Home />} />
         <Route path="/create" element={<CreateCar />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} /> */}
