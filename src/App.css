@@ -7,16 +7,13 @@
   --shadow: rgba(0, 0, 0, 0.2);
   --nav-hover-color: red;
 }
-
-.center {
-  display: "flex";
-  flex-direction: "column";
-  justify-content: center;
-  align-items: center;
-}
-
-button {
+button,
+input {
   outline: none;
+  border-radius: 4px;
+}
+button {
+  cursor: pointer;
 }
 a {
   text-decoration: none;
@@ -60,7 +57,47 @@ nav {
   align-items: first baseline;
   margin: 2rem 0 0 0;
 }
-.grid-custom{
+.grid-custom {
   padding-left: -20rem;
   /* margin: 1rem 0 0 0; */
+}
+
+/* Sign up form */
+.signUpContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+.signUpContainer h1 {
+  margin: 2rem 0;
+}
+
+form {
+  gap: 0.1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signUpContainer form > div {
+  margin: 0.5px 0rem;
+}
+.signUpContainer form input,
+.loginNav {
+  padding: 1em 15em;
+  margin: 0.5rem 0;
+}
+.loginNav {
+  width: 580px;
+  font-size: large;
+  background-color: blue;
+  color: white;
+  outline: none;
+}
+.loginNav:hover {
+  background-color: white;
+  color: blue;
+  font-weight: bolder;
+  border: 1.8px solid blue;
 }

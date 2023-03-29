@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-// 
+//
 function Signup({ setIsLoggedIn }) {
   const [formData, setFormData] = useState({
     username: "",
-    firstname: "",
-    lastname: "",
     email: "",
     password: "",
+    confirmPassword: "",
   });
-  
-  const nav = useNavigate();
+
+  const navigate = useNavigate();
 
   function handleChange(e) {
     setFormData({
@@ -21,44 +20,39 @@ function Signup({ setIsLoggedIn }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    nav("/todo");
+    console.log(formData);
   }
 
-// added form to enable user to enter their credials and sign up
+  // added form to enable user to enter their credials and sign up
   return (
-    <div className="container">
-      <h1 className="text-center mb-4">Sign Up</h1>
+    <div className="signUpContainer">
+      <h1>Sign Up</h1>
 
-      <form onSubmit={handleSubmit} className="row g-3">
-        <div className="form-group mb-2 col-md-6">
-          <label htmlFor="firstname">First Name</label>
+      <form onSubmit={handleSubmit}>
+        {/* Username */}
+        <div>
+          <div>
+            <svg
+              style={{
+                height: "2rem",
+                width: "2rem",
+                padding: "4px",
+                position: "absolute",
+                top: "22.8%",
+                marginLeft: "20px",
+              }}
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              fill="currentColor"
+              className="bi bi-person"
+              viewBox="0 0 16 16"
+            >
+              <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
+            </svg>
+          </div>
           <input
             type="text"
-            className="form-control"
-            placeholder="First Name"
-            name="firstname"
-            id="firstname"
-            onChange={handleChange}
-            value={formData.firstname}
-          />
-        </div>
-        <div className="form-group mb-2 col-md-6">
-          <label htmlFor="lastname">Last Name</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Last Name"
-            name="lastname"
-            id="lastname"
-            onChange={handleChange}
-            value={formData.lastname}
-          />
-        </div>
-        <div className="form-group mb-2 col-6 align-items-center">
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            className="form-control"
             placeholder="Username"
             name="username"
             id="username"
@@ -66,11 +60,32 @@ function Signup({ setIsLoggedIn }) {
             value={formData.username}
           />
         </div>
-        <div className="form-group mb-2 col-md-6">
-          <label htmlFor="email">Email</label>
+
+        {/* Email */}
+        <div>
+          <div
+            style={{
+              height: "1.7rem",
+              width: "1.7rem",
+              padding: "4px",
+              position: "absolute",
+              top: "32.5%",
+              marginLeft: "20px",
+            }}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="34"
+              height="34"
+              fill="currentColor"
+              className="bi bi-envelope"
+              viewBox="0 0 16 16"
+            >
+              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+            </svg>
+          </div>
           <input
             type="email"
-            className="form-control"
             placeholder="Email Address"
             name="email"
             id="email"
@@ -78,11 +93,11 @@ function Signup({ setIsLoggedIn }) {
             value={formData.email}
           />
         </div>
-        <div className="form-group mb-4 col-md-6">
-          <label htmlFor="password">Password</label>
+
+        {/* Password */}
+        <div className="form-group4">
           <input
             type="password"
-            className="form-control"
             placeholder="Password"
             name="password"
             id="password"
@@ -90,18 +105,27 @@ function Signup({ setIsLoggedIn }) {
             value={formData.password}
           />
         </div>
-        <center>
-          <button type="submit" className="btn btn-primary mb-4">
-             Submit<Link to="/todo">Submit</Link>
-          </button>
-        </center>
 
-        <center>
-          <p className="forgot-password text-right">
-            Already Signuped <Link to="/login">Login?</Link>
-          </p>
-        </center>
+        {/* Confirm password */}
+        <div className="form-group4">
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            name="Confirm Password"
+            id="confirmPassword"
+            onChange={handleChange}
+            value={formData.confirmPassword}
+          />
+        </div>
+        <button type="submit" className="loginNav">
+          Submit
+        </button>
+        <p>Have an account? Click here to Login</p>
       </form>
+
+      <button className="loginNav" onClick={() => navigate("/login")}>
+        Login
+      </button>
     </div>
   );
 }
