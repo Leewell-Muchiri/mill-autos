@@ -38,10 +38,10 @@ function ImageSlider({ slides }) {
   };
 
   const goToPrevious = () => {
-    const isFirst = currentIndex === 0
+    const isFirst = currentIndex === 0;
     const index = isFirst ? slides.length - 1 : currentIndex - 1;
 
-    setCurrentIndex(index)
+    setCurrentIndex(index);
   };
 
   const goToNext = () => {
@@ -55,6 +55,7 @@ function ImageSlider({ slides }) {
       <div style={leftArrowStyles} onClick={goToPrevious}>
         <span
           style={{
+            color: "red",
             fontSize: "3rem",
             cursor: "pointer",
           }}
@@ -65,6 +66,7 @@ function ImageSlider({ slides }) {
       <div style={rightArrowStyles} onClick={goToNext}>
         <span
           style={{
+            color: "red",
             fontSize: "3rem",
             cursor: "pointer",
           }}
