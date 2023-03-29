@@ -19,12 +19,12 @@ function Navbar() {
         </div>
         {/* Login && signup link */}
         <div>
-          <Link className="right-padding">Login</Link>
+          <Link className="right-padding" to='/login'>Login</Link>
           <Link to='/register'>Signup</Link>
         </div>
       </nav>
     </div>
-    
+
   );
 }
 
