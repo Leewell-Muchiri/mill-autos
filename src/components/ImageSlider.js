@@ -38,12 +38,16 @@ function ImageSlider({ slides }) {
   };
 
   const goToPrevious = () => {
-    if (currentIndex > 0) return setCurrentIndex(currentIndex - 1);
+    const isFirst = currentIndex === 0
+    const index = isFirst ? slides.length - 1 : currentIndex - 1;
+
+    setCurrentIndex(index)
   };
 
   const goToNext = () => {
-    if (currentIndex < slides.length - 1)
-      return setCurrentIndex(currentIndex + 1);
+    const isFirst = currentIndex === slides.length - 1;
+    const index = isFirst ? 0 : currentIndex + 1;
+    setCurrentIndex(index);
   };
 
   return (
