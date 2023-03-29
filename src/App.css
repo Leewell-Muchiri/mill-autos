@@ -73,7 +73,7 @@ nav {
   margin: 2rem 0;
 }
 
-.signUpContainer form {
+form {
   gap: 0.1rem;
   display: flex;
   flex-direction: column;

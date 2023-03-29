@@ -7,7 +7,7 @@ function Login() {
     password: "",
   });
 
-  let nav = useNavigate();
+  let navigate = useNavigate();
 
   function handleChange(e) {
     setFormData({
@@ -19,18 +19,16 @@ function Login() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    nav("/todo");
   }
   // added form in the login
 
   return (
-    <div className="container">
+    <div className="signUpContainer">
       <h1 className="text-center mb-4">Login</h1>
 
       <form onSubmit={handleSubmit}>
         <div className="row justify-content-center">
           <div className="form-group mb-2 col-md-4">
-            <label htmlFor="email">Email</label>
             <input
               type="email"
               placeholder="Email Address"
@@ -44,7 +42,6 @@ function Login() {
         </div>
         <div className="row justify-content-center">
           <div className="form-group mb-4 col-md-4">
-            <label htmlFor="password">Password</label>
             <input
               type="password"
               placeholder="password"
@@ -56,21 +53,27 @@ function Login() {
             />
           </div>
         </div>
-        <center>
-          <button type="submit" className="btn btn-primary mb-4">
-            Submit
-          </button>
-        </center>
 
-        <center>
-          <p className="forgot-password text-right">
-            Haven't Registered? <Link to="/register">Sign up here</Link>
-          </p>
-          <p className="forgot-password text-right">
-            Forgot password? Click <Link to="/reset">Here</Link> to reset
-          </p>
-          
-        </center>
+        <button type="submit" className="loginNav">
+          Submit
+        </button>
+
+        <p>Haven't Registered? Sign up here</p>
+        <button className="loginNav" onClick={() => navigate("/register")}>
+          Register
+        </button>
+        <p>
+          Forgot password? Click{" "}
+          <Link
+            style={{
+              color: "green",
+            }}
+            to="/reset"
+          >
+            Here
+          </Link>{" "}
+          to reset
+        </p>
       </form>
     </div>
   );
