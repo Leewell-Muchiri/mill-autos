@@ -1,4 +1,5 @@
 /* Global styles */
+
 .App {
   height: 100%;
 }
@@ -9,7 +10,7 @@
 }
 button,
 input {
-  outline: none;
+  /* outline: none; */
   border-radius: 4px;
 }
 button {
@@ -100,4 +101,57 @@ form {
   color: blue;
   font-weight: bolder;
   border: 1.8px solid blue;
+}
+
+/* dashboard */
+.dashboard {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.dashboard-button {
+  background: gray;
+  color: white;
+  padding: 10px 80px;
+}
+.dashboard-button:hover {
+  color: white;
+  background: black;
+}
+.first-dashboard {
+  border-right: 2px solid gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.first-dashboard-child {
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 200px;
+  margin-top: 2rem;
+}
+
+.first-dashboard-second {
+  margin: 10rem 0 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.second-dashboard {
+  padding: 0 0 0 1rem;
+  flex-grow: 1;
+  position: "absolute";
+}
+
+/* createCar */
+.createCar{
+  display: flex;
+  flex-direction: column;
+}
+.createCar > input{
+  border: 1px solid black;
+  padding: 12px 20px;
+  background-color: black;
+  border-radius: 6px;
+  
 }

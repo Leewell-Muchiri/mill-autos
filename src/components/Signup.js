@@ -122,8 +122,8 @@ function Signup({ setIsLoggedIn }) {
         <div className="form-group4">
           <input
             type="password"
-            placeholder="Confirm Password"
-            name="Confirm Password"
+            placeholder="confirmPassword"
+            name="confirmPassword"
             id="confirmPassword"
             onChange={handleChange}
             value={formData.confirmPassword}

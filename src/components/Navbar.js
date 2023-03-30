@@ -4,16 +4,19 @@ function Navbar() {
   return (
     <div>
       <nav className="top-padding">
-        <logo
+        <Link
+          to="/"
           style={{
             color: "red",
           }}
         >
           MILL AUTOS
-        </logo>
+        </Link>
         {/* Login && signup link */}
         <div>
-          <Link className="right-padding">Our Stock</Link>
+          <Link className="right-padding" to="/stock">
+            Our Stock
+          </Link>
           <Link className="right-padding">About</Link>
           <Link>Contacts</Link>
         </div>
@@ -23,6 +26,14 @@ function Navbar() {
             Login
           </Link>
           <Link to="/register">Signup</Link>
+          <Link
+            style={{
+              marginLeft: "2rem",
+            }}
+            to="/admin"
+          >
+            Dashboard
+          </Link>
         </div>
       </nav>
     </div>
