@@ -1,29 +1,30 @@
 // import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
+import { useState, useEffect } from "react";
+import FetchedData from "./FetchedData";
 
 function OurStock() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/cars")
+      .then((res) => res.json())
+      .then((data) => setData(data));
+  }, []);
   return (
     <div>
-        <Navbar />
-      {/* <Link
-        style={{
-          position: "absolute",
-          top: "20px",
-          left: "20px",
-          color: "green",
-          textDecoration: "none",
-        }}
-        to=".."
-      >
-        Back
-      </Link>
+      <Navbar />
 
-      <div style={{ 
-        marginTop: "5em",
-      }}> */}
-      
-        <p>This is the stock page</p>
-      {/* </div> */}
+      <div className="fetchedData">
+        {data &&
+          data.map((item, index) => {
+            return (
+              <div key={index}>
+                <FetchedData data={item} />
+              </div>
+            );
+          })}
+      </div>
     </div>
   );
 }
