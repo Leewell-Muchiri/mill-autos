@@ -35,6 +35,31 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
+.fetchedData-data{
+  border: 1px solid black;
+  margin: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 var(--shadow);
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+.fetchedData-data:hover,.buy-button:hover{
+  transform: scale(1.1);
+}
+.fetchedData-image{
+  width: 80%;
+  background-color: blue;
+  padding: 2.5em;
+  border-radius: 4px;
+}
+/* .buy-button:hover{
+  transform: scale(1.1);
+} */
 
 /* Nav */
 nav {
