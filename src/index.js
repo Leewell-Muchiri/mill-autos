@@ -1,12 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import "./assets/main.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import Signup from "./components/Signup";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./components/Login";
 import PasswordReset from "./components/PasswordReset";
+import OurStock from "./components/OurStock";
+import AdminIndex from "./components/admin/AdminIndex";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -17,6 +20,8 @@ root.render(
         <Route path="/register" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/reset" element={<PasswordReset />} />
+        <Route path="/stock" element={<OurStock />} />
+        <Route path="/admin" element={<AdminIndex />} />
         {/* <Route path="/create" element={<CreateCar />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} /> */}
