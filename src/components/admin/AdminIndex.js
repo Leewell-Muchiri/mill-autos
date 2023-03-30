@@ -6,10 +6,12 @@ import { Link } from "react-router-dom";
 function AdminIndex() {
   const name = "Admin";
   const [changedComponent, setChangedComponent] = useState(null);
+  const [items, setItems] = useState([]);
+
 
   const createCarPost = () => {
     console.log("createCarPost");
-    setChangedComponent(<CarPost />);
+    setChangedComponent(<CarPost setItems={setItems} />);
   };
   return (
     <div className="dashboard">
@@ -27,7 +29,7 @@ function AdminIndex() {
                 paddingtop: "500px",
               }}
               onClick={() => {
-                setChangedComponent(<ViewAllPost />);
+                setChangedComponent(<ViewAllPost items={items} />);
               }}
             >
               View Posts

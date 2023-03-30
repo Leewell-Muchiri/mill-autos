@@ -30,6 +30,12 @@ a:hover {
   padding-top: 20px;
 }
 
+/* fetchedData */
+.fetchedData {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
 /* Nav */
 nav {
   display: flex;
@@ -144,14 +150,13 @@ form {
 }
 
 /* createCar */
-.createCar{
+.createCar {
   display: flex;
   flex-direction: column;
 }
-.createCar > input{
+.createCar > input {
   border: 1px solid black;
   padding: 12px 20px;
   background-color: black;
   border-radius: 6px;
-  
 }
