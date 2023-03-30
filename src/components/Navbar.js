@@ -17,8 +17,10 @@ function Navbar() {
           <Link className="right-padding" to="/stock">
             Our Stock
           </Link>
-          <Link className="right-padding">About</Link>
-          <Link>Contacts</Link>
+          <Link to="/about" className="right-padding">
+            About
+          </Link>
+          <Link to="/contact">Contacts</Link>
         </div>
         {/* Login && signup link */}
         <div>

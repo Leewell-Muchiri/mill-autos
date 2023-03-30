@@ -9,6 +9,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./components/Login";
 import PasswordReset from "./components/PasswordReset";
 import OurStock from "./components/OurStock";
+import Contact from "./components/Contact";
+import About from "./components/About";
 import AdminIndex from "./components/admin/AdminIndex";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -22,9 +24,9 @@ root.render(
         <Route path="/reset" element={<PasswordReset />} />
         <Route path="/stock" element={<OurStock />} />
         <Route path="/admin" element={<AdminIndex />} />
-        {/* <Route path="/create" element={<CreateCar />} />
+        {/* <Route path="/create" element={<CreateCar />} /> */}
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} /> */}
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
