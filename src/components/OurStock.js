@@ -68,10 +68,11 @@ function OurStock() {
       .then((data) => setData(data));
   }, []);
 
-  const filteredData = data.filter((item) => {
+  let filteredData = data.filter((item) => {
     return (
       item.brand.toLowerCase().includes(searchedData.toLowerCase()) ||
-      item.model.toLowerCase().includes(searchedData.toLowerCase())
+      item.model.toLowerCase().includes(searchedData.toLowerCase()) ||
+      item.year === Number(searchedData)
     );
   });
 

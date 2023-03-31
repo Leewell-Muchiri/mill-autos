@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 function FetchedData({ data }) {
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const slides = [
     {
@@ -23,25 +25,13 @@ function FetchedData({ data }) {
       title: "Nissan",
     },
   ];
-  const item = slides.map((slide) => {
-    return slide.url;
-  });
 
-  // const goToPrevious = () => {
-  //   const isFirst = currentIndex === 0;
-  //   const index = isFirst ? slides.length - 1 : currentIndex - 1;
-
-  //   setCurrentIndex(index);
-  // };
-
-  // const goToNext = () => {
-  //   const isFirst = currentIndex === slides.length - 1;
-  //   const index = isFirst ? 0 : currentIndex + 1;
-  //   setCurrentIndex(index);
-  // };
+  const clickedCar = (item) => {
+    console.log(item);
+    navigate("/car-details", { state: {carData: item} });
+  };
   return (
-    <div className="fetchedData-data">
-      {/* <h1>Fetched Data</h1> */}
+    <div className="fetchedData-data" onClick={() => clickedCar(data)}>
       <div>
         <img
           className="fetchedData-image"
@@ -51,50 +41,12 @@ function FetchedData({ data }) {
             height: "150px",
           }}
         />
-
-        {/*  */}
-        {/* <div  onClick={goToPrevious}>
-          <span
-            style={{
-              color: "red",
-              fontSize: "3rem",
-              cursor: "pointer",
-            }}
-          >
-            &#8672;
-          </span>
-        </div>
-        <div  onClick={goToNext}>
-          <span
-            style={{
-              color: "red",
-              fontSize: "3rem",
-              cursor: "pointer",
-            }}
-          >
-            &#8674;
-          </span>
-        </div> */}
       </div>
       <h5>Brand: {data.brand}</h5>
       <h5>Model: {data.model}</h5>
       <h5>Year: {data.year}</h5>
       <h5>Color: {data.color}</h5>
       <h5>Price: {data.price}</h5>
-
-      <button
-        className="buy-button"
-        style={{
-          backgroundColor: data.color,
-          color: "white",
-          border: "none",
-          padding: "10px",
-          margin: "10px",
-          transition: "transform 0.5s",
-        }}
-      >
-        Buy
-      </button>
     </div>
   );
 }
