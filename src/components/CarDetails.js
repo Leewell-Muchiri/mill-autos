@@ -13,10 +13,10 @@ export default function CarDetails({ carData }) {
   console.log(data);
   return (
     <div>
-      <h1>Car Details</h1>
-      <button onClick={handleBackClick}>Go Back</button>
       <div className="car-details-container">
         <div className="car-details-info">
+          <h1>Car Details</h1>
+          <button onClick={handleBackClick}>Go Back</button>
           <h2 className="car-details-title">
             {data.brand} {data.model}
           </h2>
@@ -25,6 +25,22 @@ export default function CarDetails({ carData }) {
             <li className="car-details-item">Color: {data.color}</li>
             <li className="car-details-item">Price: ${data.price}</li>
           </ul>
+        </div>
+        <div>
+          <h1>Contacts</h1>
+          <h3
+            style={{
+              color: "red",
+            }}
+          >
+            Call
+          </h3>
+          <p>074555556</p>
+
+          <h3 style={{
+            color: "red",
+          }}>Email</h3>
+          <p>Email: kian99564@gmail.com</p>
         </div>
       </div>
     </div>
