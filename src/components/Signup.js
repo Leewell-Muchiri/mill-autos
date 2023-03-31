@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 //
-function Signup({ setIsLoggedIn }) {
+function Signup(props) {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -25,7 +25,7 @@ function Signup({ setIsLoggedIn }) {
 
   // added form to enable user to enter their credials and sign up
   return (
-    <div className="signUpContainer">
+    <div className="signUpContainer active">
       <Link
         style={{
           position: "absolute",
@@ -50,7 +50,7 @@ function Signup({ setIsLoggedIn }) {
                 width: "2rem",
                 padding: "4px",
                 position: "absolute",
-                top: "22.8%",
+                top: "27.5%",
                 marginLeft: "20px",
               }}
               xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +81,7 @@ function Signup({ setIsLoggedIn }) {
               width: "1.7rem",
               padding: "4px",
               position: "absolute",
-              top: "32.5%",
+              top: "38%",
               marginLeft: "20px",
             }}
           >

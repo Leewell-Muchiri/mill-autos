@@ -23,17 +23,19 @@ function Login() {
   // added form in the login
 
   return (
-    <div className="signUpContainer">
-
+    <div className="signUpContainer active">
       <Link
-      style={{
-        position: 'absolute',
-        top: '15px',
-        left: '15px',
-        color: "green",
-        textDecoration: 'none',
-      }}
-      to='/'>Return To Home</Link>
+        style={{
+          position: "absolute",
+          top: "15px",
+          left: "15px",
+          color: "green",
+          textDecoration: "none",
+        }}
+        to="/"
+      >
+        Return To Home
+      </Link>
       <h1 className="text-center mb-4">Login</h1>
 
       <form onSubmit={handleSubmit}>
