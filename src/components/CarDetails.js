@@ -1,10 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
-export default function CarDetails({ carData }) {
+export default function CarDetails() {
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location?.state?.carData);
   let data = location?.state?.carData;
 
   const handleBackClick = () => {
