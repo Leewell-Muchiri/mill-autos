@@ -190,3 +190,41 @@ form {
   background-color: black;
   border-radius: 6px;
 }
+
+
+.car-details-container {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  background-color: #f7f7f7;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+}
+
+.car-details-container:hover {
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.4);
+  transform: translateY(-5px);
+  transition: all 0.3s ease-in-out;
+}
+
+.car-details-info {
+  color: #333;
+}
+
+.car-details-info h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.car-details-info h4 {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.car-details-info p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}

@@ -11,6 +11,7 @@ import PasswordReset from "./components/PasswordReset";
 import OurStock from "./components/OurStock";
 import Contact from "./components/Contact";
 import About from "./components/About";
+import CarDetails from "./components/CarDetails";
 import AdminIndex from "./components/admin/AdminIndex";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -26,6 +27,7 @@ root.render(
         <Route path="/admin" element={<AdminIndex />} />
         {/* <Route path="/create" element={<CreateCar />} /> */}
         <Route path="/about" element={<About />} />
+        <Route path="/car-details" element={<CarDetails />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
