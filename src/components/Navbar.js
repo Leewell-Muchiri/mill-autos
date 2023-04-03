@@ -1,37 +1,35 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+// import { resetUserData } from "../actions/userActions";
 import Signup from "./Signup";
 import Login from "./Login";
 import { useSelector } from "react-redux";
 
 function Navbar() {
-  let name
-  const user = useSelector((state) => state.user);
-  useEffect(() => {
-    if (user) {
-      name = user;
-      setLogin(true);
-    } else setLogin(false);
-  }, [user]);
+  
   const navigate = useNavigate();
   const [selectRegister, setSelectRegister] = useState(false);
   const [login, setLogin] = useState(false);
+  const [loggedOut, setLoggedOut] = useState(false);
   const [selectLogin, setSelectLogin] = useState(false);
+  let name;
+  const user = useSelector((state) => state.user);
+  useEffect(() => {
+    if (user) {
+      setLogin(true);
+    } else {
+      setLogin(false);
+    }
+  }, [user]);
   const gotTOSignUp = (setLogin) => {
     navigate("/register");
     setSelectRegister(true);
-    Toggle();
   };
 
-  const Toggle = () => {
-    if (selectRegister) {
-      setSelectLogin(false);
-      return <Signup />;
-    } else if (selectLogin) {
-      setSelectRegister(false);
-      return <Login />;
-    }
-  };
+
+  const resetUserData = () => ({
+    type: "RESET_USER_DATA",
+  });
 
   return (
     <div>
@@ -68,7 +66,30 @@ function Navbar() {
               style={{
                 marginLeft: "2rem",
               }}
-              onClick={() => setLogin(false)}
+              // onClick={() => {
+              //   fetch("http://127.0.0.1:3000/logout", {
+              //     method: "DELETE",
+              //     headers: {
+              //       "Content-Type": "application/json",
+              //     },
+              //   })
+              //     .then((res) => {
+              //       if (!res.ok) {
+              //         throw new Error(res.status);
+              //       }
+              //       console.log(res.status);
+              //       navigate("/");
+              //       setLogin(false);
+              //       return res.json();
+              //     })
+              //     .catch((error) => {
+              //       console.log(error);
+              //     });
+              // }}
+              onClick={() => {
+                setLoggedOut(true)
+                setLogin(false);
+              }}
             >
               Logout
             </button>
@@ -85,8 +106,6 @@ function Navbar() {
           </div>
         )}
       </nav>
-      {selectRegister}
-      {selectLogin}
     </div>
   );
 }

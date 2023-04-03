@@ -6,6 +6,13 @@ const initialState = {
 
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
+    case "RESET_USER_DATA":
+      return {
+        ...state,
+        user: [],
+      };
+    default:
+      return state;
     case "ADD_NAME":
       return {
         ...state,
@@ -16,8 +23,6 @@ const userReducer = (state = initialState, action) => {
         ...state,
         name: action.payload,
       };
-    default:
-      return state;
   }
 };
 

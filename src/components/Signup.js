@@ -27,21 +27,23 @@ function Signup(props) {
   function handleSubmit(e) {
     e.preventDefault();
     console.log(formData);
-    fetch("http://127.0.0.1:3000/signup", {
+    fetch("https://mill-auto-api.onrender.com/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
-    }).then((res) => {
-      if (!res.ok) {
+    })
+      .then((res) => {
+        if (!res.ok) {
+          console.log(res.status);
+        }
+        dispatch({ type: "ADD_NAME", payload: formData.username });
+        navigate("/");
         console.log(res.status);
-      }
-      dispatch({ type: "ADD_NAME", payload: formData.username });
-      navigate('/')
-      console.log(res.status);
-      return res.json();
-    }).then(data => console.log(data))
+        return res.json();
+      })
+      .then((data) => console.log(data));
   }
 
   // added form to enable user to enter their credials and sign up
