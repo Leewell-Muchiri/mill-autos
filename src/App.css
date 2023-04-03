@@ -10,7 +10,6 @@
 }
 button,
 input {
-  /* outline: none; */
   border-radius: 4px;
 }
 button {
@@ -33,7 +32,7 @@ a:hover {
 /* fetchedData */
 .fetchedData {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 .fetchedData-data {
   border: 1px solid black;
@@ -56,13 +55,9 @@ a:hover {
   width: 80%;
   background-color: blue;
   position: inherit;
-  /* padding: 2.5em; */
   padding-top: -15px;
   border-radius: 4px;
 }
-/* .buy-button:hover{
-  transform: scale(1.1);
-} */
 
 /* Nav */
 nav {
@@ -94,7 +89,6 @@ nav {
 }
 .grid-custom {
   padding-left: -20rem;
-  /* margin: 1rem 0 0 0; */
 }
 
 /* Sign up form */

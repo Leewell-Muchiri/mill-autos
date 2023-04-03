@@ -18,59 +18,35 @@ import FetchedData from "./FetchedData";
   }, []);
 */
 function OurStock() {
-  // const [searchedData, setSearchedData] = useState("");
-  // const [data, setData] = useState([]);
-
-  // useEffect(() => {
-  //   fetch("http://localhost:8000/cars")
-  //     .then((res) => res.json())
-  //     .then((data) => setData(data));
-  // }, []);
-  // return (
-  //   <div>
-  //     <Navbar />
-
-  //     <div className="fetchedData">
-  //       <div>
-  //         <label>
-  //           Search:{" "}
-  //           <input
-  //             type="text"
-  //             value={searchedData}
-  //             onChange={(e) => {
-  //               setSearchedData(e.target.value);
-  //             }}
-  //             style={{
-  //               border: "ipx solid black",
-  //               background: "blue",
-  //             }}
-  //           />
-  //         </label>
-  //       </div>
-  //       {data
-  //         ? data.map((item, index) => {
-  //             return (
-  //               <div key={index}>
-  //                 <FetchedData data={item} />
-  //               </div>
-  //             );
-  //           })
-  //         : ""}
-  //     </div>
-  //   </div>
-  // );
   const [searchedData, setSearchedData] = useState("");
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8000/cars")
-      .then((res) => res.json())
-      .then((data) => setData(data));
+    fetch("https://mill-auto-api.onrender.com/cars", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // mode: "no-cors",
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return res.json();
+      })
+      .then((items) => {
+        setData(items);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
   }, []);
+
 
   let filteredData = data.filter((item) => {
     return (
-      item.brand.toLowerCase().includes(searchedData.toLowerCase()) ||
+      // item.brand.toLowerCase().includes(searchedData.toLowerCase()) ||
       item.model.toLowerCase().includes(searchedData.toLowerCase()) ||
       item.year === Number(searchedData)
     );

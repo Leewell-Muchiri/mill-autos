@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import Navbar from "./Navbar";
+import {useDispatch} from "react-redux"
 
 function Login() {
+  const dispatch = useDispatch()
   const [formData, setFormData] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
@@ -18,77 +21,83 @@ function Login() {
 
   function handleSubmit(e) {
     e.preventDefault();
-
+    fetch("http://127.0.0.1:3000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    }).then((res) => {
+      if (!res.ok) {
+        console.log(res.status);
+      }
+      console.log(res.status);
+      dispatch({ type: "name", payload: formData.username });
+      navigate('/')
+      return res.json();
+    }).then(data=> console.log(data))
   }
   // added form in the login
 
   return (
-    <div className="signUpContainer active">
-      <Link
-        style={{
-          position: "absolute",
-          top: "15px",
-          left: "15px",
-          color: "green",
-          textDecoration: "none",
-        }}
-        to="/"
-      >
-        Return To Home
-      </Link>
-      <h1 className="text-center mb-4">Login</h1>
+    <>
+      <Navbar />
+      <div className="signUpContainer active">
+        <h1 className="text-center mb-4">Login</h1>
 
-      <form onSubmit={handleSubmit}>
-        <div className="row justify-content-center">
-          <div className="form-group mb-2 col-md-4">
-            <input
-              type="email"
-              placeholder="Email Address"
-              name="email"
-              id="email"
-              className="form-control"
-              onChange={handleChange}
-              value={formData.email}
-            />
+        <form onSubmit={handleSubmit}>
+          <div className="row justify-content-center">
+            <div className="form-group mb-2 col-md-4">
+              <input
+                type="username"
+                placeholder="username"
+                name="username"
+                id="username"
+                className="form-control"
+                onChange={handleChange}
+                value={formData.username}
+              />
+            </div>
           </div>
-        </div>
-        <div className="row justify-content-center">
-          <div className="form-group mb-4 col-md-4">
-            <input
-              type="password"
-              placeholder="password"
-              name="password"
-              id="password"
-              className="form-control"
-              onChange={handleChange}
-              value={formData.password}
-            />
+          <div className="row justify-content-center">
+            <div className="form-group mb-4 col-md-4">
+              <input
+                type="password"
+                placeholder="password"
+                name="password"
+                id="password"
+                className="form-control"
+                onChange={handleChange}
+                value={formData.password}
+              />
+            </div>
           </div>
-        </div>
 
-        <button type="submit" className="loginNav">
-          Submit
-        </button>
+          <button type="submit" className="loginNav">
+            Submit
+          </button>
 
-        <p>Haven't Registered? Sign up here</p>
-        <button className="loginNav" onClick={() => navigate("/register")}>
-          Register
-        </button>
-        <p>
-          Forgot password? Click{" "}
-          <Link
-            style={{
-              color: "green",
-            }}
-            to="/reset"
-          >
-            Here
-          </Link>{" "}
-          to reset
-        </p>
-      </form>
-    </div>
+          <p>Haven't Registered? Sign up here</p>
+          <button className="loginNav" onClick={() => navigate("/register")}>
+            Register
+          </button>
+          <p>
+            Forgot password? Click{" "}
+            <Link
+              style={{
+                color: "green",
+              }}
+              to="/reset"
+            >
+              Here
+            </Link>{" "}
+            to reset
+          </p>
+        </form>
+      </div>
+    </>
   );
 }
 
 export default Login;
+

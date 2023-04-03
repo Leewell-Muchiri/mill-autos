@@ -2,12 +2,13 @@ import CarPost from "./CarPost";
 import ViewAllPost from "./ViewAllPost";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function AdminIndex() {
-  const name = "Admin";
+  const location = useLocation();
+  let data = location?.state?.carData;
   const [changedComponent, setChangedComponent] = useState(null);
   const [items, setItems] = useState([]);
-
 
   const createCarPost = () => {
     console.log("createCarPost");
@@ -17,7 +18,7 @@ function AdminIndex() {
     <div className="dashboard">
       <div className="first-dashboard">
         <div className="first-dashboard-child">
-          <h1>Hi, {name}</h1>
+          <h1>Hi, {data}</h1>
           <Link to="..">Home</Link>
           <div className="first-dashboard-second">
             <button className="dashboard-button" onClick={createCarPost}>
