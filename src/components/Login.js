@@ -21,21 +21,24 @@ function Login() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch("http://127.0.0.1:3000/login", {
+    console.log(formData)
+    fetch("https://mill-auto-api.onrender.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
-    }).then((res) => {
-      if (!res.ok) {
+    })
+      .then((res) => {
+        if (!res.ok) {
+          console.log(res.status);
+        }
         console.log(res.status);
-      }
-      console.log(res.status);
-      dispatch({ type: "name", payload: formData.username });
-      navigate('/')
-      return res.json();
-    }).then(data=> console.log(data))
+        dispatch({ type: "name", payload: formData.username });
+        navigate("/");
+        return res.json();
+      })
+      .then((data) => console.log(data));
   }
   // added form in the login
 
